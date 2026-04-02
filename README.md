@@ -1,25 +1,23 @@
-# data-analysis
+# Data-analysis
 This repository contains the custom Python scripts for our analytical pipeline.we used these code files to perform a clustering analysis. We analyzed the heavy water assimilation rate (CD%) of the cable bacteria cells.
-# 聚类分析：层次聚类与 K-Means 交叉验证
+# Clustering Analysis: Hierarchical Clustering and K-Means Cross-Validation
 
-## 📊 项目简介
-本项目使用 Python 对包含 100 个样本的数据集进行了无监督聚类分析。项目首先采用**层次聚类（Ward 链接，欧式距离）**将数据划分为 3 类，随后使用 **K-均值（K-means）**算法进行交叉验证，并计算了调整兰德指数（ARI）以评估方法间的一致性。
+## 📊 Project Overview
+This project performs an unsupervised clustering analysis on a dataset containing 100 samples using Python. The project first utilizes Hierarchical Clustering (Ward linkage, Euclidean distance) to partition the data into 3 clusters, followed by cross-validation using the K-Means algorithm. The Adjusted Rand Index (ARI) is calculated to evaluate the consistency between the two methods.
 
-## 📈 核心可视化结果
+## 📈 Core Visualization Results
 
-### 1. 层次聚类分布与轮廓系数评估
-下图展示了层次聚类的树状图（Dendrogram）、聚类后的二维空间分布以及用于评估聚类质量的轮廓系数图。
-![层次聚类结果](Figure S1.tif) 
+### 1. Hierarchical Clustering Distribution and Silhouette Coefficient Evaluation
+The figure below displays the hierarchical clustering dendrogram, the 2D spatial distribution after clustering, and the silhouette plot used to assess clustering quality.(Figure S1.tif) 
 
-### 2. K-Means 验证与方法一致性
-为验证层次聚类的稳定性，本研究引入了 K-Means 聚类。下方热力图展示了两种算法分类结果的混淆矩阵。
-![方法一致性热力图](Figure S2.tif)
-**结论：** 调整兰德指数 (ARI) 达到 0.943，表明两种聚类方法在当前数据集上的划分结果具有极高的一致性。
+### 2.K-Means Validation and Method Consistency
+To verify the stability of the hierarchical clustering, this study introduces K-Means clustering. The heatmap below illustrates the confusion matrix of the classification results from both algorithms.(Figure S2.tif)
+**Conclusion** : The Adjusted Rand Index (ARI) reached 0.943, indicating an extremely high level of consistency between the partitioning results of the two clustering methods on the current dataset.
 
 ## 💻 核心使用的技术栈
 * **Python**
-* **scikit-learn** (AgglomerativeClustering, KMeans, 评价指标)
+* **scikit-learn** (AgglomerativeClustering, KMeans, evaluation metrics)
 * **scipy** (dendrogram, linkage)
-* **matplotlib & seaborn** (数据可视化)
+* **matplotlib & seaborn** (Data visualization)
 
-*(完整代码请查看本仓库中的 `clustering_analysis.py` 文件)*
+*(For the complete code, please refer to the clustering_analysis.py file in this repository)*
